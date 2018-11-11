@@ -35,7 +35,7 @@ public class NetCdfService {
             String startDate = netcdfFile.findGlobalAttribute("RangeBeginningDate").getStringValue();
             //Парсим эту дату и добавляем время
             Instant startTime = LocalDate.parse(startDate).atTime(0, 30).toInstant(ZoneOffset.UTC);
-            //Вытягиваем дрёхмерны массив значений указанного параметра
+            //Вытягиваем трёхмерный массив значений указанного параметра
             Array array = variable.read();
             //Получаем объект комплексного индекса (время, широта, долгота)
             Index index = array.getIndex();
